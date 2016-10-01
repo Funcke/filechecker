@@ -1,11 +1,11 @@
 //includes
+#include <stdio.h>
+#include <string.h>
 #ifdef __unix__
 	#include <sys/stat.h>
 	#include <sys/types.h>
 #else
 	#include <sys\stat.h>
-#include <stdio.h>
-#include <string.h>
 
 //main
 int main(void){
