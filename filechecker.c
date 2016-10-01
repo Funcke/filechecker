@@ -47,6 +47,7 @@ int main(void){
 			printf("For closing the program please press ENTER(or else press any key)...");
 			ch=getchar();
 		}while(ch!='\n');
+	flcose(lfp);
 	}else{
 		fprintf(stderr, "Eror occured opening the log.txt file");
 	}
