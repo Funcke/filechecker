@@ -13,7 +13,7 @@ int main(void){
 	struct stat puffer;//file-attributes
 
 	printf("Welcome to the file-accesstester:\n");
-	lfp=fopen("logfile.txt", "wt");
+	lfp=fopen("log.txt", "wt");
 	if(lfp!=NULL){
 		do{
 			printf("Put in the file-path\n");
