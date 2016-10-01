@@ -1,3 +1,4 @@
+//Jonas Funcke 2016
 //includes
 #include <sys\stat.h>
 #include <stdio.h>
