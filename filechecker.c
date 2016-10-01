@@ -6,6 +6,7 @@
 	#include <sys/types.h>
 #else
 	#include <sys\stat.h>
+#endif
 
 //main
 int main(void){
