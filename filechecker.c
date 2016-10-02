@@ -23,6 +23,7 @@ int main(void){
 		do{
 			printf("Put in the file-path\n");
 			fgets(line, 100000, stdin);
+
 			if(line!=NULL){//Test for empty String
 				for(i=0; line[i]!='\n'; i++){
 					;
@@ -49,10 +50,10 @@ int main(void){
 				printf("There was nothing on your path");
 				fprintf(lfp, "empty path\n");
 			}
-			printf("For closing the program please press ENTER(or else press any key)...");
-			ch=getchar();
+			printf("For closing the program please press 'j' (or else press 'n')...");
+			ch=getchar(); getchar();
 		}while(ch!='\n');
-	flcose(lfp);
+        fclose(lfp);
 	}else{
 		fprintf(stderr, "Eror occured opening the log.txt file");
 	}
