@@ -18,7 +18,7 @@ int main(void){
 	struct stat puffer;//file-attributes
 
 	printf("Welcome to the file-accesstester:\n");
-	lfp=fopen("log.txt", "wt");
+	lfp=fopen("history.log", "wt");
 
 	if(lfp!=NULL){
 
