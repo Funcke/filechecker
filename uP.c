@@ -39,16 +39,16 @@ int main(void){
 				if(stat(line, &puffer)==0){
 					if(puffer.st_mode & S_IWRITE){
 						printf("You got writing-access\n");
-                        printf("Do you want to rename the file?(y or n)");
-                        renamectrl=getchar(); getchar();
-                        if(renamectrl=='y'|| renamectrl=='Y'){//answer was yes
-                            printf("please enter the new name for the file:\n");
+                        			printf("Do you want to rename the file?(y or n)");
+                        			renamectrl=getchar(); getchar();
+                        			if(renamectrl=='y'|| renamectrl=='Y'){//answer was yes
+                            				printf("please enter the new name for the file:\n");
 							fgets(newName, 10000, stdin);
 							if(newName!=NULL){//Test for empty String
 								for(i=0; newName[i]!='\n'; i++){
 									;
 								}
-								newName[i]='\n';
+								newName[i]='\0';
 							}else{
 								printf("Error! There was a something with your new file-name\n");
 							}
@@ -68,7 +68,7 @@ int main(void){
 						printf("It looks like you don't got any permission for this\n"
 							"'Do'h' - Homer J. Simpson\n");
 					}
-                    printf("%d bytes\n", puffer.st_size);
+                    			printf("%d bytes\n", puffer.st_size);
 					fprintf(lfp, "%s\n", line);
 				}else{
 					printf("There was a problem with your path!\n");
@@ -81,7 +81,7 @@ int main(void){
 			printf("For closing the program please press 'j' (or else press 'n')...");
 			ch=getchar(); getchar();
 		}while(ch!='\n');
-        fclose(lfp);
+        	fclose(lfp);
 	}else{
 
 		fprintf(stderr, "Eror occured opening the log.txt file");
