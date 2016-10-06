@@ -1,26 +1,22 @@
 //includes
-
 #include <stdio.h>
 #include <string.h>
 #include <errno.h>
-#ifdef __unix__
+#ifdef __unix__//unix file-libraries
 	#include <sys/stat.h>
 	#include <sys/types.h>
 #else
-	#include <sys\stat.h>
+	#include <sys\stat.h>//win file-libraries
 #endif
 
-
-
 //main
-
 int main(void){
 	//deklarations
 	int i, renameReturn;//Counting variable used in for-loop looking for the '\n'
 	char line[10000];//file-path
 	char newName[10000];//new filename
 	char ch;
-    char renamectrl;//Answer for rename question
+    	char renamectrl;//Answer for rename question
 	FILE *lfp;//pointer on log-file
 	struct stat puffer;//file-attributes
 
@@ -59,7 +55,7 @@ int main(void){
 								printf("There's something wrong with the rename action\n");
 								printf("%s\n", strerror(errno));
 							}
-                        }
+                       				 }
 					}else if(puffer.st_mode & S_IREAD){
 						printf("You got reading-access\n");
 					}else if(puffer.st_mode & S_IEXEC){
@@ -83,7 +79,6 @@ int main(void){
 		}while(ch!='\n');
         	fclose(lfp);
 	}else{
-
 		fprintf(stderr, "Eror occured opening the log.txt file");
 	}
 	return 0;
