@@ -76,7 +76,7 @@ int main(void){
 			}
 			printf("For closing the program please press 'j' (or else press 'n')...");
 			ch=getchar(); getchar();
-		}while(ch!='\n');
+		}while(ch=='j');
         	fclose(lfp);
 	}else{
 		fprintf(stderr, "Eror occured opening the log.txt file");
