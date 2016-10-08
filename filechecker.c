@@ -22,7 +22,7 @@ int main(void){
 	struct stat puffer;//file-attributes
 
 	printf("Welcome to the file-accesstester:\n");
-	lfp=fopen("history.log", "wt+");
+	lfp=fopen("history.log", "at+");
 	if(lfp!=NULL){
 		do{
 			printf("Put in the file-path\n");
