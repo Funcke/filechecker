@@ -1,28 +1,23 @@
 //includes
-
 #include <stdio.h>
 #include <string.h>
 #include <errno.h>
 #include <stdbool.h>
-#include "killnewline.h"
 #ifdef __unix__
 	#include <sys/stat.h>
 	#include <sys/types.h>
 #else
 	#include <sys\stat.h>
 #endif
-
-
-
+#include "killnewline.h"
 //main
-
 int main(void){
 	//deklarations
 	int i, renameReturn;//Counting variable used in for-loop looking for the '\n'
 	char line[10000];//file-path
 	char newName[10000];//new filename
 	char ch;
-    char renamectrl;//Answer for rename question
+	char renamectrl;//Answer for rename question
 	FILE *lfp;//pointer on log-file
 	struct stat puffer;//file-attributes
 
@@ -33,7 +28,7 @@ int main(void){
 			printf("Put in the file-path\n");
 			fgets(line, 100000, stdin);
 			if(line!=NULL){//Test for empty String
-				killnewline(line);//Killling the newline
+				killNewLine(line);//Killling the newline
 				//Getting target-attributes
 				if(stat(line, &puffer)==0){
 					if(puffer.st_mode & S_IWRITE){
@@ -44,7 +39,7 @@ int main(void){
                             printf("please enter the new name for the file:\n");
 							fgets(newName, 10000, stdin);
 							if(newName!=NULL){//Test for empty String
-								killnewline(newName);
+								killNewLine(newName);
 								renameReturn=rename(line, newName);
 								if(renameReturn==0){
 									printf("Everything went fine: %s\n", newName);
@@ -64,7 +59,7 @@ int main(void){
 						printf("It looks like you don't got any permission for this\n"
 							"'Do'h' - Homer J. Simpson\n");
 					}
-                    printf("%d bytes\n", puffer.st_size);
+                    			printf("%d bytes\n", puffer.st_size);
 					fprintf(lfp, "%s\n", line);
 				}else{
 					printf("There was a problem with your path!\n");
@@ -76,7 +71,7 @@ int main(void){
 			}
 			printf("For closing the program please press 'j' (or else press 'n')...\n");
 			ch=getchar(); getchar();
-		}while(ch!='\n');
+		}while(ch=='j');
         fclose(lfp);
 	}else{
 

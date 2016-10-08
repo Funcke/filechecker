@@ -8,7 +8,7 @@
 *Parameters: string read by fgets
 *return value: true if succeeded can be ignored
 */
-bool killnewline (char* string){
+bool killNewLine(char* string){
 	int i;
 	bool newline, rc;
 	for(i=0; string[i]!='\0'&&string[i]!='\n'; i++){
