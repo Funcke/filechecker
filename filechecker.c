@@ -16,6 +16,7 @@ int main(void){
 	int i, renameReturn;//Counting variable used in for-loop looking for the '\n'
 	char line[10000];//file-path
 	char newName[10000];//new filename
+
 	char ch;
 	char renamectrl;//Answer for rename question
 	FILE *lfp;//pointer on log-file
@@ -25,6 +26,7 @@ int main(void){
 	lfp=fopen("history.log", "at+");
 	if(lfp!=NULL){
 		do{
+
 			printf("Put in the file-path\n");
 			fgets(line, 100000, stdin);
 			if(line!=NULL){//Test for empty String
